@@ -1,6 +1,19 @@
 public class Sort {
 
     /***
+     * calculates revenue for representatives
+     * @param reps sales representatives to be calculate revenue for
+     */
+    public static void calculateRevenue(SalesRepresentative[] reps){
+        int revenue;
+        for (int i = 0; i < reps.length; i++){
+            revenue = reps[i].getSales() * reps[i].getQuota();
+            reps[i].setRevenue( revenue);
+        }
+    }
+
+
+    /***
      * sort sales representatives in descending order by revenue amount
      * @param reps sales representatives to be sorted
      * @return sorted representatives
@@ -16,18 +29,6 @@ public class Sort {
             }
         }
         return reps;
-    }
-
-    /***
-     * calculates revenue for representatives
-     * @param reps sales representatives to be calculate revenue for
-     */
-    public static void calculateRevenue(SalesRepresentative[] reps){
-        int revenue;
-        for (int i = 0; i < reps.length; i++){
-           revenue = reps[i].getSales() * reps[i].getQuota();
-           reps[i].setRevenue( revenue);
-        }
     }
 
 }
